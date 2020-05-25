@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 文件名 Product.hbm.xml 的第一个字母（P）一定要大写，要和数据表对应的实体类类保持一致 -->
+<!-- 配置文件Product.hbm.xml， 用于映射Product类对应数据库中的product_表 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.bunny.spring.framework.entity">
+    <!-- 表明类Product对应数据库中的表products -->
+    <class name="Product" table="products">
+        <!-- 属性id映射表里面的字段id -->
+        <id name="id" column="id">
+            <!-- generator表示id的自增长方式采用数据库的本地方式 -->
+            <generator class="native">
+            </generator>
+        </id>
+        <!-- 配置属性映射字段 -->
+        <property name="name" />
+        <property name="description" />
+        <property name="price" />
+    </class>
+
+</hibernate-mapping>
